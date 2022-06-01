@@ -1,0 +1,182 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ReleaseVersion>2.2.0</ReleaseVersion>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controls\CustomDialogs\Page1.xaml.cs" />
+    <Compile Remove="Pages\TabbedPage1.xaml.cs" />
+    <Compile Remove="Services\LoginService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Controls\CustomDialogs\Page1.xaml" />
+    <EmbeddedResource Remove="Pages\TabbedPage1.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\fa-Regular-400.otf" />
+    <None Remove="Resources\Fonts\fa-Solid-900.otf" />
+    <None Remove="Resources\Fonts\faBrands-Regular-400.otf" />
+    <None Remove="Resources\Fonts\IBMPlexSans-Bold.ttf" />
+    <None Remove="Resources\Fonts\IBMPlexSans-Medium.ttf" />
+    <None Remove="Resources\Fonts\IBMPlexSans-Regular.ttf" />
+    <None Remove="Resources\Fonts\IBMPlexSans-SemiBold.ttf" />
+    <None Remove="Resources\Images\account.svg" />
+    <None Remove="Resources\Images\calender.svg" />
+    <None Remove="Resources\Images\clients.svg" />
+    <None Remove="Resources\Images\Dashboard.svg" />
+    <None Remove="Resources\Images\holidays.svg" />
+    <None Remove="Resources\Images\information.svg" />
+    <None Remove="Resources\Images\lock.svg" />
+    <None Remove="Resources\Images\Logo.png" />
+    <None Remove="Resources\Images\Logo.svg" />
+    <None Remove="Resources\Images\mail.svg" />
+    <None Remove="Resources\Images\message.svg" />
+    <None Remove="Resources\Images\messages.svg" />
+    <None Remove="Resources\Images\More.svg" />
+    <None Remove="Resources\Images\payroll.svg" />
+    <None Remove="Resources\Images\visit.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\fa-Regular-400.otf" />
+    <EmbeddedResource Include="Resources\Fonts\fa-Solid-900.otf" />
+    <EmbeddedResource Include="Resources\Fonts\faBrands-Regular-400.otf" />
+    <EmbeddedResource Include="Resources\Fonts\IBMPlexSans-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\IBMPlexSans-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\IBMPlexSans-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\IBMPlexSans-SemiBold.ttf" />
+    <EmbeddedResource Include="Resources\Images\account.svg" />
+    <EmbeddedResource Include="Resources\Images\calender.svg" />
+    <EmbeddedResource Include="Resources\Images\clients.svg" />
+    <EmbeddedResource Include="Resources\Images\Dashboard.svg" />
+    <EmbeddedResource Include="Resources\Images\holidays.svg" />
+    <EmbeddedResource Include="Resources\Images\information.svg" />
+    <EmbeddedResource Include="Resources\Images\Lock.svg" />
+    <EmbeddedResource Include="Resources\Images\Logo.png" />
+    <EmbeddedResource Include="Resources\Images\Logo.svg" />
+    <EmbeddedResource Include="Resources\Images\mail.svg" />
+    <EmbeddedResource Include="Resources\Images\message.svg" />
+    <EmbeddedResource Include="Resources\Images\messages.svg" />
+    <EmbeddedResource Include="Resources\Images\More.svg" />
+    <EmbeddedResource Include="Resources\Images\payroll.svg" />
+    <EmbeddedResource Include="Resources\Images\visit.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="6.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="FreshMvvm" Version="4.0.1" />
+    <PackageReference Include="IdentityModel.OidcClient" Version="5.0.0" />
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.3" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.1" />
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="3.4.1" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.2.8" />
+    <PackageReference Include="Refit" Version="6.3.2" />
+    <PackageReference Include="SkiaSharp" Version="2.80.3" />
+    <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
+    <PackageReference Include="sqlite-net" Version="1.6.292" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\Templates\MoreItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Templates\VisitOverviewTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ChatContactsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ChatListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ChatPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ContactListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ContactPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\DashboardPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\MailListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\MainMenuPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ModalPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\MorePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\NotificationListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\QuoteListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\QuotePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ScheduleListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\ContactListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\ContactPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\MainMenuPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\ModalPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\QuoteListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\QuotePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Styles\Icons.xaml.cs">
+      <DependentUpon>Icons.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

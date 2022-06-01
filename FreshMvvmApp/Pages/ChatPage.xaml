@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:templateselector="clr-namespace:KantimeEvv.Controls.TemplateSelector" xmlns:pagemodels="clr-namespace:KantimeEvv.PageModels" xmlns:models="clr-namespace:KantimeEvv.Models" x:DataType="pagemodels:ChatPageModel"
+             x:Class="KantimeEvv.Pages.ChatPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="SentTemplate" x:DataType="models:ChatMessage">
+                 
+                    <StackLayout BackgroundColor="Transparent"   Padding="10"  HorizontalOptions="Start">
+                    <Label BackgroundColor="White" xct:CornerRadiusEffect.CornerRadius="4,4,4,10" Margin="75,0,0,0" Padding="10" Style="{StaticResource Medium2Label}"  Text="{Binding Message}"/>
+                    </StackLayout>
+               
+            </DataTemplate>
+            <DataTemplate x:Key="ReceivedTemplate" x:DataType="models:ChatMessage" >
+                <StackLayout BackgroundColor="Transparent"   Padding="10"  HorizontalOptions="Start">
+                    <Label BackgroundColor="#F0F7FC" xct:CornerRadiusEffect.CornerRadius="4,4,10,4" Margin="0,0,75,0" Padding="10" Style="{StaticResource Medium2Label}" Text="{Binding Message}"/>
+                </StackLayout>
+            </DataTemplate>
+                <templateselector:ChatTemplateSelector x:Key="chatDataTemplateSelector"
+                SentTemplate="{StaticResource SentTemplate}"
+                ReceivedTemplate="{StaticResource ReceivedTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView  >
+        <StackLayout  Orientation="Horizontal"  Margin="0">
+            <xct:AvatarView Style="{StaticResource RectAvatar}" Text="AF" />
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <Label Style="{StaticResource Large1LabelBold}"  Text="Mike Smith"/>
+            </StackLayout>
+            
+
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+        <CollectionView ItemsSource="{Binding ChatList}"
+                        ItemTemplate="{StaticResource chatDataTemplateSelector}"
+                        
+                        >
+            <CollectionView.ItemsLayout  >
+                <LinearItemsLayout  Orientation="Vertical" ItemSpacing="5" SnapPointsAlignment="End"/>
+            </CollectionView.ItemsLayout>
+        </CollectionView>
+            <Entry x:Name="txtChat" Text="{Binding Message}"/>
+            <Button Text="Send" Command="{Binding SendMessage}" />
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

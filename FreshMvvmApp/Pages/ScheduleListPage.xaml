@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:controls="clr-namespace:KantimeEvv.Helpers.UIControls" xmlns:pagemodels="clr-namespace:KantimeEvv.PageModels" xmlns:models="clr-namespace:KantimeEvv.Models" x:DataType="pagemodels:ScheduleListPageModel"
+             x:Class="KantimeEvv.Pages.ScheduleListPage"
+               Title="Schedules"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="dashboard.png"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout >
+            <Button Text="Start Listening" Command="{Binding StartListeningLocation}"/>
+            <Label Text="{Binding Latitude}" />
+            <CollectionView  ItemsSource="{Binding schedules}" 
+                          ItemSizingStrategy="MeasureAllItems"
+                         SelectionMode="Single"
+>
+
+
+
+            <!--<CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                        Span="2" HorizontalItemSpacing="14" VerticalItemSpacing="14" />
+            </CollectionView.ItemsLayout>-->
+
+ 
+
+            <CollectionView.ItemTemplate  >
+                <DataTemplate x:DataType="models:ScheduleModel">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical">
+                       
+                            
+                        </StackLayout >
+                        <Frame  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                        IsClippedToBounds="True"
+                        >
+
+                            <StackLayout>
+                                
+                            </StackLayout>
+                       
+                            
+                    </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+     
+</ContentPage>

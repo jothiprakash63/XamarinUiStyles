@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:KantimeEvv.Pages"
+            x:Class="KantimeEvv.Pages.TabbedPage1"
+            xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+            >
+  <!--Pages can be added as references or inline-->
+
+    <xct:TabView TabStripBackgroundColor="{StaticResource TabBackgroundColor}">
+        <xct:TabViewItem Text="aaaaaa" >
+            <Label Text="1"/>
+        </xct:TabViewItem >
+        <xct:TabViewItem Text="aaaaaa" >
+            <Label Text="1"/>
+        </xct:TabViewItem>
+        <xct:TabViewItem Text="aaaaaa" >
+            <Label Text="1"/>
+        </xct:TabViewItem>
+        <xct:TabViewItem Text="aaaaaa"  >
+            <Label Text="1"/>
+        </xct:TabViewItem>
+        
+    </xct:TabView>
+
+</ContentPage>

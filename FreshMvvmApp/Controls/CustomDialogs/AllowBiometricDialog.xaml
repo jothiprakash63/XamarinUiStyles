@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup  xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:customdialogs="clr-namespace:KantimeEvv.Controls.CustomDialogs" xmlns:controls="clr-namespace:KantimeEvv.Helpers.UIControls"
+            x:DataType="customdialogs:AllowBiometricDialog"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Size="300,300"
+            Color="{StaticResource Transparent}"
+              xct:CornerRadiusEffect.CornerRadius="7"
+            
+             x:Class="KantimeEvv.Controls.CustomDialogs.AllowBiometricDialog" 
+            >
+    <xct:Popup.Content>
+        <Frame Padding="5"  BackgroundColor="White" CornerRadius="4" >
+        <StackLayout Padding="5" Orientation="Vertical" >
+                
+                <Button Padding="0" Margin="0" Style="{StaticResource TextButton}" HorizontalOptions="End" Text="Skip" Clicked="Skip_Clicked" />
+                <controls:SvgImage Margin="0,5,0,0" WidthRequest="120" HeightRequest="42" AssemblyName="KantimeEvv" Source="Lock.svg" />
+                <Label HorizontalTextAlignment="Center" Style="{StaticResource MediumLabelBold}" Text="Allow &quot;Kantime&quot; to use your Face ID and Fingerprint?"/>
+               
+                <Label HorizontalTextAlignment="Center" Style="{StaticResource MediumLabel}" Text="This app is designed to use your Face ID and Fingerprint for faster verification and login process."/>
+                <Button Margin="0,20,0,0"   HorizontalOptions="Center" Style="{StaticResource ContainedButtonSmall}" Clicked="Permisson_Clicked"  Text="Give Permission"/>
+
+            </StackLayout>
+        </Frame>
+    </xct:Popup.Content>
+</xct:Popup>
+    

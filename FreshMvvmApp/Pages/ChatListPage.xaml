@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pagemodels="clr-namespace:KantimeEvv.PageModels" x:DataType="pagemodels:ChatListPageModel"
+             x:Class="KantimeEvv.Pages.ChatListPage"
+            xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:models="clr-namespace:KantimeEvv.Models" 
+             xmlns:fa="clr-namespace:FontAwesome"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.IconColor="Black"
+              Title="Chat"
+             NavigationPage.BackButtonTitle="Chat"
+             >
+
+    <ContentPage.ToolbarItems >
+        <ToolbarItem   Command="{Binding Command_NewChat}">
+
+            <ToolbarItem.IconImageSource>
+                <FontImageSource  FontFamily="FAS" Glyph="{x:Static fa:FontAwesomeIcons.PlusSquare}" />
+            </ToolbarItem.IconImageSource>
+          
+        </ToolbarItem>
+
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+       
+        <CollectionView  ItemsSource="{Binding ChatHistory}" 
+                         ItemSizingStrategy="MeasureAllItems"
+                         
+                         SelectionMode="Single"
+                         SelectedItem="{Binding SelectedItem}"
+                         SelectionChangedCommandParameter="{Binding SelectedItem, Source={RelativeSource Self}}">
+
+
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"
+                          />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate  >
+                <DataTemplate x:DataType="models:ChatHistoryModel" >
+                    <Frame  Style="{StaticResource FrameCard}" IsClippedToBounds="True">
+                        <StackLayout >
+                            <Grid  RowSpacing="5"   RowDefinitions="auto,auto" ColumnDefinitions="auto,*,150">
+                                <xct:BadgeView  HeightRequest="10" Text="1" Grid.RowSpan="2"  BackgroundColor="Green" FontSize="0.1" >
+                                    <xct:BadgeView.Content>
+                                   
+                               
+                                <xct:AvatarView ColorTheme="{x:Static xct:ColorTheme.Ocean}" Style="{StaticResource RectAvatar}" Text="{Binding Initial }"/>
+                                    </xct:BadgeView.Content>
+                                </xct:BadgeView>
+
+                                <Label  Grid.Column="1" Style="{StaticResource MediumLabelBold}" Text="{Binding ChatName}" />
+                                <Label  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource Medium2Label}" LineBreakMode="TailTruncation" Text="{Binding LastMessage}" />
+                                <Label HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.Column="2"  Style="{StaticResource MicroLabelBold}" Text="{Binding SentTime}" />
+
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

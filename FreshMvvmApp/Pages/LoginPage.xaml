@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BasePage  xmlns:base="clr-namespace:KantimeEvv"
+                      xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                xmlns:pagemodels="clr-namespace:KantimeEvv.PageModels"
+                NavigationPage.HasNavigationBar="false"
+                   xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+                xmlns:controls="clr-namespace:KantimeEvv.Helpers.UIControls" x:DataType="pagemodels:LoginPageModel"
+                x:Class="KantimeEvv.Pages.LoginPage">
+    <base:BasePage.Content>
+        <StackLayout Margin="16">
+            <StackLayout  Orientation="Vertical" VerticalOptions="Start" >
+                <controls:SvgImage Margin="0,65,0,0" WidthRequest="120" HeightRequest="42" AssemblyName="KantimeEvv" Source="Logo.svg" />
+
+                <Label Style="{StaticResource LargeLabelBold}" FontAttributes="Bold" Text="Log In"/>
+                <Label Style="{StaticResource MediumLabel}" Text="Please Login with registered username and password"/>
+                <Label Style="{StaticResource MediumLabelBold}" Text="Username"/>
+                <Frame
+                x:Name="EmailFrame"
+                Style="{StaticResource Base_FrameEntry}">
+                    <Entry
+                    Placeholder="Enter your email"
+                    Text="{Binding LoginId}"
+                    Style="{StaticResource OutlinedEntry}">
+                        <!--<Entry.Behaviors>
+                            <xct:UserStoppedTypingBehavior
+							Command="{Binding ValidateCommand}"
+							CommandParameter="email"
+                            StoppedTypingTimeThreshold="50"
+                            ShouldDismissKeyboardAutomatically="False"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger 
+							TargetType="Entry"
+							Binding="{Binding Email.IsValid}"
+							Value="False">
+                                <Setter TargetName="EmailFrame" Property="Frame.BorderColor" Value="{StaticResource FailColor}" />
+                                <Setter TargetName="LoginButton" Property="Button.IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Entry.Triggers>-->
+                        <Entry.Effects>
+                            <xct:RemoveBorderEffect></xct:RemoveBorderEffect>
+                        </Entry.Effects>
+                    </Entry>
+                </Frame>
+                <Label Style="{StaticResource MediumLabelBold}"     Text="Password"/>
+                <Frame
+                x:Name="PassWordFrame"
+                Style="{StaticResource Base_FrameEntry}">
+                    <Entry
+                    Placeholder="Enter your Password"
+                    Text="{Binding Password}"
+                    Style="{StaticResource OutlinedEntry}">
+                        <!--<Entry.Behaviors>
+                            <xct:UserStoppedTypingBehavior
+							Command="{Binding ValidateCommand}"
+							CommandParameter="email"
+                            StoppedTypingTimeThreshold="50"
+                            ShouldDismissKeyboardAutomatically="False"/>
+                        </Entry.Behaviors>
+                        <Entry.Triggers>
+                            <DataTrigger 
+							TargetType="Entry"
+							Binding="{Binding Email.IsValid}"
+							Value="False">
+                                <Setter TargetName="EmailFrame" Property="Frame.BorderColor" Value="{StaticResource FailColor}" />
+                                <Setter TargetName="LoginButton" Property="Button.IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Entry.Triggers>-->
+                        <Entry.Effects>
+                            <xct:RemoveBorderEffect></xct:RemoveBorderEffect>
+                        </Entry.Effects>
+                    </Entry>
+                </Frame>
+
+
+                <Button HorizontalOptions="EndAndExpand" Style="{StaticResource TextButton}"     Text="Need Help?" Command="{Binding LoginCommand}"/>
+
+            </StackLayout  >
+            <StackLayout VerticalOptions="EndAndExpand" >
+                <Button   Style="{StaticResource ContainedButton}"  Text="Login" Command="{Binding LoginCommand}"/>
+                <Button   Style="{StaticResource ContainedButton}"  Text="Google" BackgroundColor="Red" Command="{Binding GoogleLoginCommand}"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </base:BasePage.Content>
+
+</base:BasePage>

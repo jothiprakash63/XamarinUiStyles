@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+ <Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+        xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+        xmlns:controls="clr-namespace:KantimeEvv.Helpers.UIControls" 
+        xmlns:models="clr-namespace:KantimeEvv.Models"
+       x:Class="KantimeEvv.Controls.Templates.MoreItemTemplate"
+        x:DataType="models:MoreModel"
+        IsClippedToBounds="True"
+        
+        >
+        <Grid  Margin="20"  RowDefinitions="Auto,Auto" ColumnDefinitions="Auto" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <xct:BadgeView HorizontalOptions="Center"  BadgePosition="TopRight" Text="{Binding BadgeValue}">
+                <controls:SvgImage Margin="5,0,0,0" HorizontalOptions="Center" Source="{Binding Icon}"  VerticalOptions="Start"  WidthRequest="30" HeightRequest="30" AssemblyName="KantimeEvv"  />
+            </xct:BadgeView>
+            <Label Style="{StaticResource MediumLabel}" Grid.Row="1" HorizontalTextAlignment="Center" Text="{Binding Name}"/>
+
+        </Grid>
+</Frame>

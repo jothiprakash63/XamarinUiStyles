@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:KantimeEvv.Helpers.UIControls" 
+             xmlns:templates="clr-namespace:KantimeEvv.Controls.Templates"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" xmlns:pagemodels="clr-namespace:KantimeEvv.PageModels" x:DataType="pagemodels:DashboardPageModel"
+             x:Class="KantimeEvv.Pages.DashboardPage"
+             Title="Dashboard"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="CountTemplate">
+                
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <controls:SvgImage VerticalOptions="Start"  WidthRequest="30" HeightRequest="30" AssemblyName="KantimeEvv" Source="message.svg" />
+                        <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+
+                            <Label Style="{StaticResource Large2LabelBold}" Text="02" HorizontalTextAlignment="End"/>
+                            <Label Style="{StaticResource Medium2Label}" Text="New Messages"/>
+
+                        </StackLayout>
+                    </StackLayout>
+               
+            </ControlTemplate>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <FlexLayout FlowDirection="LeftToRight" Direction="Row" JustifyContent="SpaceAround">
+                <Button Style="{StaticResource ContainedButtonSmall}" Text="Today"/>
+                <Button Style="{StaticResource OutlinedButtonSmall}" Text="This Week"/>
+                <Button Style="{StaticResource OutlinedButtonSmall}" Text="Last Week"/>
+                <Button Style="{StaticResource OutlinedButtonSmall}" Text="Next Week"/>
+                
+            </FlexLayout>
+     
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="10">
+                <Frame HorizontalOptions="FillAndExpand"  ControlTemplate="{StaticResource CountTemplate}"/>
+                <Frame HorizontalOptions="FillAndExpand"  ControlTemplate="{StaticResource CountTemplate}"/>
+            </StackLayout>
+
+            <Frame Style="{StaticResource FrameCard}">
+                <Grid  ColumnSpacing="10" RowSpacing="10" RowDefinitions="auto,auto" ColumnDefinitions="*,*" >
+                    <Label   Style="{StaticResource MediumLabelBold}" Text="Visit's Overview" />
+                    <Label  HorizontalTextAlignment="End" Grid.Column="1" Style="{StaticResource MediumLabelBold}" Text="Mon,Jan 8 2020" />
+                    <templates:VisitOverviewTemplate  StartColor="#E6F3F9"  EndColor="#6EB1CE" Grid.Row="1" Grid.Column="0" Padding="0" />
+
+                    <templates:VisitOverviewTemplate StartColor="#E0FAEC" EndColor="#35985C" Grid.Row="1" Grid.Column="1" Padding="0" />
+                    <templates:VisitOverviewTemplate StartColor="#DBDBEA" EndColor="#8686BA" Grid.Row="2" Grid.Column="0" Padding="0" />
+                    <templates:VisitOverviewTemplate StartColor="#F2E2E8" EndColor="#E0A9BE" Grid.Row="2" Grid.Column="1" Padding="0" />
+                </Grid>
+            </Frame>
+
+            <Frame Style="{StaticResource FrameCard}">
+                <forms:ChartView x:Name="barchart"  HeightRequest="150"/>
+            </Frame>
+
+                <Frame Style="{StaticResource FrameCard}">
+                    <forms:ChartView x:Name="linechart"  HeightRequest="150"/>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

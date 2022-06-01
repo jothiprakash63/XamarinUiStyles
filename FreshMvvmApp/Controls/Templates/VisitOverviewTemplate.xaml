@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:templates="clr-namespace:KantimeEvv.Controls.Templates" x:DataType="templates:VisitOverviewTemplate"
+       x:Class="KantimeEvv.Controls.Templates.VisitOverviewTemplate"
+            Padding="0" Style="{StaticResource FrameCard}"
+       >
+            <Frame.Background>
+                <LinearGradientBrush  StartPoint="0,0" 
+                             EndPoint="1,0">
+
+                    <GradientStop Color="{Binding StartColor}"
+                                  
+                          Offset="0.1"/>
+            <GradientStop Color="{Binding EndColor}"
+                          Offset="1.0"/>
+                </LinearGradientBrush>
+            </Frame.Background>
+            <StackLayout>
+        <Label BackgroundColor="{Binding StartColor}" Style="{StaticResource MediumLabel}" Padding="10" Text="UnConfirmed" />
+                <StackLayout Padding="10">
+                    <Label Style="{StaticResource Large2LabelBold}" Text="01" />
+                    <Label Style="{StaticResource Medium2Label}" Text="10:30 hrs" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
