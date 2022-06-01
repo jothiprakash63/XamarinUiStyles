@@ -166,9 +166,9 @@
     <Folder Include="Resources\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FreshMvvmApp\KantimeEvv.csproj">
+    <ProjectReference Include="..\FreshMvvmApp\FreshMvvm.csproj">
       <Project>{2515F94C-D55E-4904-9650-6E5224D29096}</Project>
-      <Name>KantimeEvv</Name>
+      <Name>FreshMvvm</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

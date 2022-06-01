@@ -12,14 +12,14 @@ using Microsoft.AppCenter.Crashes;
 using Xamarin.Forms;
 using Plugin.CurrentActivity;
 using Plugin.Fingerprint;
-using KantimeEvv.Droid.Services;
+using FreshMvvm.Droid.Services;
 using Android.Content;
-using KantimeEvv.Models;
+using FreshMvvm.Models;
 using Plugin.FirebasePushNotification;
 
-namespace KantimeEvv.Droid
+namespace FreshMvvm.Droid
 {
-    [Activity(Label = "KantimeEvv", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "FreshMvvm", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         Intent serviceIntent;
